@@ -4,12 +4,12 @@ let continuar = prompt("¿Te gustaría saber cuánta carne comprar para una parr
 
 while (continuar == "y") {
   let personas = parseInt(prompt("¿Cuantas personas van a tu parrillada?"));
-  
+
   let resultado = personas * 250;
   alert(`Esta es la cantidad de carne que necesitas ${resultado} gramos.`);
-  
+
   let respuesta = prompt("¿Te gustaría saber el precio dependiendo del tipo de corte? \n Escoge entre estas opciones: vacio, ribeye, newyork.");
-  
+
   function actualizar() {
     window.location.reload();
   }
@@ -41,21 +41,30 @@ while (continuar == "y") {
 
   let descuento = prompt(`Finalmente, ${nombre}; ¿Quieres ganarte un cupón de descuento? Pásanos tus datos y te lo brindaremos.\n ¿Deseas el cupón? (recuerda, solo tienes una chance de solicitarlo)\n (y/n)`);
 
-    while (descuento == "y") {
-        let correo = prompt("Escribe tu e-mail por favor");
+  while (descuento == "y") {
+    let correo = prompt("Escribe tu e-mail por favor");
 
-        let telefono = prompt(`¿Nos das tu teléfono?`);
+    let telefono = prompt("¿Nos das tu teléfono?");
 
-        confirmacion = prompt(`Tus datos son:\n Correo Electrónico: ${correo}\n Teléfono: ${telefono}\n ¿Confirmas? (y/n)`);
-        
-        if (confirmacion == "y") {
-            alert("Gracias, tu cupón es: ABC1234. \n Vuelte pronto!");
-            break;
-        }
-        else {
-        alert("De acuerdo, vuelve a escribir la info")
-        };
-       
+    confirmacion = prompt(`Tus datos son:\n Correo Electrónico: ${correo}\n Teléfono: ${telefono}\n ¿Confirmas? (y/n)`);
+
+    if (confirmacion == "y") {
+      alert("Gracias, tu cupón es: ABC1234. \n Vuelte pronto!");
+      break;
     }
+    else {
+      alert("De acuerdo, vuelve a escribir la info")
+    };
+
+  }
 }
 actualizar()
+
+const productos = [{ codigo: 001, tipo: "vacio" },
+{ codigo: 002, tipo: "ribeye" },
+{ codigo: 002, tipo: "newyork" }];
+
+for (const tipo of productos) {
+  console.log(tipo.codigo);
+  console.log(tipo.tipo);
+}
